@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
 // --- Konfigurasi API ---
-// Menggunakan subdomain baru untuk backend sesuai panduan
-const API_BASE_URL = 'http://api.aijostore.id:8080'; 
+// FINAL: Menggunakan HTTPS untuk backend. Backend HARUS diaktifkan HTTPS-nya.
+const API_BASE_URL = 'https://api.aijostore.id'; 
 
 // --- Komponen-komponen UI Kecil ---
 const SvgIcon = ({ path, className = "h-6 w-6" }) => (
