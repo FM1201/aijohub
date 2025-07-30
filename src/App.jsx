@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
 // --- Konfigurasi API ---
-// Ganti dengan URL backend Anda yang sesungguhnya
-const API_BASE_URL = 'http://145.79.8.71:8080'; 
+// Menggunakan subdomain baru untuk backend sesuai panduan
+const API_BASE_URL = 'http://api.aijostore.id:8080'; 
 
 // --- Komponen-komponen UI Kecil ---
 const SvgIcon = ({ path, className = "h-6 w-6" }) => (
@@ -17,7 +17,6 @@ const Spinner = ({ className = "h-5 w-5" }) => (
         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
     </svg>
 );
-
 // --- Komponen Utama ---
 
 function LoginScreen({ onLogin }) {
