@@ -17,6 +17,7 @@ const Spinner = ({ className = "h-5 w-5" }) => (
         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
     </svg>
 );
+
 // --- Komponen Utama ---
 
 function LoginScreen({ onLogin }) {
@@ -31,7 +32,6 @@ function LoginScreen({ onLogin }) {
         setError('');
 
         try {
-            // Panggil API Login yang sesungguhnya
             const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -121,7 +121,6 @@ function Dashboard({ user, token, onLogout }) {
         'Authorization': `Bearer ${token}`
     };
 
-    // Fungsi untuk mengambil semua supplier
     const fetchAllSuppliers = async () => {
         setIsLoading(true);
         setError(null);
@@ -182,9 +181,9 @@ function Dashboard({ user, token, onLogout }) {
             });
             if (!response.ok) throw new Error(`Gagal ${isEditMode ? 'memperbarui' : 'menyimpan'} supplier.`);
             closeModal();
-            fetchAllSuppliers(); // Refresh data
+            fetchAllSuppliers();
         } catch (err) {
-            alert(err.message); // Simple error feedback
+            alert(err.message);
         }
     };
     
